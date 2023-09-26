@@ -30,3 +30,12 @@ Run the notebook Audio_conversion/convert_video_to_audio.ipynb
 Set in the 1st cell the GCS URI to the video files from the previous step and the target GCS URI to store the audio files.
 Run all the cells.
 When complete, audio files should be available in the target GCS folder.
+
+Generate Google Cloud TXT transcripts
+The Cloud Speech-to-Text API must be enabled for the project: https://console.cloud.google.com/apis/api/speech.googleapis.com/overview
+
+Grant the "Cloud Speech Administrator" role to the GCE service account.
+
+Run the notebook Transcript_generation/generate_gcp_txt_transcripts.ipynb
+Set in the 1st cell the project ID, the GCS URI to the audio files from the previous steps (remember to arrange files in subdirectories with language codes), set the target GCS URI to store the transcripts, set the model to use to generate the transcripts.
+Run all the cells.
