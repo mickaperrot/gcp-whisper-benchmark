@@ -53,3 +53,9 @@ Set in the 1st cell the GCS URI to the transcripts from the previous test and th
 Run all the cells.  
 When complete, the WER results will display.  
 A `wer_diagnosis` folder is created containing diagnosis HTML files to highligth transcripts quality compared to ground truth.  
+
+## (Optional)  Generate Google Cloud SRT transcripts ##
+Run the notebook `Transcript_generation/generate_gcp_srt_transcripts.ipynb`.  
+Set in the 1st cell the project ID, the GCS URI to the transcripts from the previous test and the GCS URI to ground truth transcripts.  
+Run all the cells.  
+When complete, srt transcripts should be available in the target GCS folder.   
