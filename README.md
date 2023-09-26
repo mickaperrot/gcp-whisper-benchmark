@@ -1,29 +1,29 @@
-GCP vs Whisper Benchmark
+# GCP vs Whisper Benchmark #
 This repository provide tools to benchmark Speech-to-Text (STT) solutions from Google Cloud (Chirp) & OpenAI (Whisper).
 
 It is structured into 3 folders:
-1) Audio_conversion: tool to convert .mp4 video to audio files compatible with Chirp & Whisper
-2) Transcript_generation: tool to generate TXT and SRT transcripts
-3) WER_calculation: tools to calculate WER scores and analyze transcript quality
+1) **Audio_conversion**: tool to convert .mp4 video to audio files compatible with Chirp & Whisper
+2) **Transcript_generation**: tool to generate TXT and SRT transcripts
+3) **WER_calculation**: tools to calculate WER scores and analyze transcript quality
 
-Prerequisites
+## Prerequisites ##
 You must have a Google Cloud project with billing enabled.
 
 The Cloud Speech-to-Text API must be enabled for the project: https://console.cloud.google.com/apis/api/speech.googleapis.com/overview
 
 Grant the "Cloud Speech Client" role to the GCE default service account.
 
-All the notebooks in this repository have been tested on Vertex AI Workbench notebook.
+All the notebooks in this repository have been tested on Vertex AI Workbench notebook.  
 The Notebooks API must be enabled.
 
 Create a Vertex AI Workbench notebook:
 - Operating suystem: Debian 11
 - Environment: Python 3 (with Intel MKL)
 
-Open the notebook.
+Open the notebook.  
 Clone this repository.
 
-Convert video files
+## Convert video files ##
 Create a Google Cloud Storage bucket.
 Grant the "Storage Admin" role on the bucket to the default GCE service account.
 Create a folder in the bucket to store video files.
@@ -35,8 +35,14 @@ Set in the 1st cell the GCS URI to the video files from the previous step and th
 Run all the cells.
 When complete, audio files should be available in the target GCS folder.
 
-Generate Google Cloud TXT transcripts
+## Generate Google Cloud TXT transcripts ##
 Run the notebook Transcript_generation/generate_gcp_txt_transcripts.ipynb
 Set in the 1st cell the project ID, the GCS URI to the audio files from the previous steps (remember to arrange files in subdirectories with language codes), set the target GCS URI to store the transcripts, set the model to use to generate the transcripts.
+Run all the cells.
+When complete, json & txt transcripts should be available in the target GCS folder.
+
+## Generate Whisper TXT transcripts ##
+Run the notebook Transcript_generation/generate_whisper_transcripts.ipynb
+Set in the 1st cell the GCS URI to the audio files from the previous steps (remember to arrange files in subdirectories with language codes), set the target GCS URI to store the transcripts, set the model to use to generate the transcripts.
 Run all the cells.
 When complete, json & txt transcripts should be available in the target GCS folder.
