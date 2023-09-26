@@ -46,3 +46,8 @@ Run the notebook Transcript_generation/generate_whisper_transcripts.ipynb
 Set in the 1st cell the GCS URI to the audio files from the previous steps (remember to arrange files in subdirectories with language codes), set the target GCS URI to store the transcripts, set the model to use to generate the transcripts.
 Run all the cells.
 When complete, json & txt transcripts should be available in the target GCS folder.
+
+## Calculate WER and generate analysis files ##
+Run the notebook WER_calculation/calculate_wer.ipynb
+Set in the 1st cell the GCS URI to the transcripts from the previous test and the GCS URI to ground truth transcripts.
+Run all the cells.
