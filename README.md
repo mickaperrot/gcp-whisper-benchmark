@@ -29,6 +29,15 @@ Grant the "Storage Admin" role on the bucket to the default GCE service account.
 Create a folder in the bucket to store video files.  
 Import videos into subfolders named after the language code of the source audio.  
 For example:
+```
+├── videos
+│   ├── en-US
+│   │   ├── video1.mp4
+│   │   ├── video2.mp4
+│   ├── fr-FR
+│   │   ├── video3.mp4
+│   │   ├── video4.mp4
+```
 
 Run the notebook `Audio_conversion/convert_video_to_audio.ipynb`.  
 Set in the 1st cell the GCS URI to the video files from the previous step and the target GCS URI to store the audio files.  
@@ -49,13 +58,13 @@ When complete, json & txt transcripts should be available in the target GCS fold
 
 ## Calculate WER and generate analysis files ##
 Run the notebook `WER_calculation/calculate_wer.ipynb`.  
-Set in the 1st cell the GCS URI to the transcripts from the previous test and the GCS URI to ground truth transcripts.  
+Set in the 1st cell the GCS URI to the transcripts from the previous steps and the GCS URI to ground truth transcripts.  
 Run all the cells.  
 When complete, the WER results will display.  
 A `wer_diagnosis` folder is created containing diagnosis HTML files to highligth transcripts quality compared to ground truth.  
 
 ## (Optional)  Generate Google Cloud SRT transcripts ##
 Run the notebook `Transcript_generation/generate_gcp_srt_transcripts.ipynb`.  
-Set in the 1st cell the project ID, the GCS URI to the transcripts from the previous test and the GCS URI to ground truth transcripts.  
+Set in the 1st cell the project ID, the GCS URI to the audio files and the GCS URI from the previous steps and the target GCS URI for the transcripts.  
 Run all the cells.  
-When complete, srt transcripts should be available in the target GCS folder.   
+When complete, the srt transcripts should be available in the target GCS folder.   
