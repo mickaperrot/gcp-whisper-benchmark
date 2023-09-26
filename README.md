@@ -65,6 +65,6 @@ A `wer_diagnosis` folder is created containing diagnosis HTML files to highligth
 
 ## (Optional)  Generate Google Cloud SRT transcripts ##
 Run the notebook `Transcript_generation/generate_gcp_srt_transcripts.ipynb`.  
-Set in the 1st cell the project ID, the GCS URI to the audio files and the GCS URI from the previous steps and the target GCS URI for the transcripts.  
+Set in the 1st cell the project ID, the GCS URI to the audio files and the GCS URI from the previous steps, the target GCS URI for the transcripts and the maximum number of characters to include into a given SRT chunk.  
 Run all the cells.  
 When complete, the srt transcripts should be available in the target GCS folder.   
