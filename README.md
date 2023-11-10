@@ -46,7 +46,7 @@ When complete, audio files should be available in the target GCS folder.
 
 ## Generate Google Cloud TXT transcripts ##
 Run the notebook `Transcript_generation/generate_gcp_txt_transcripts.ipynb`.  
-Set in the 1st cell the project ID, the GCS URI to the audio files from the previous steps (remember to arrange files in subdirectories with language codes), set the target GCS URI to store the transcripts, set the model to use to generate the transcripts.  
+Set in the 1st cell the project ID, the GCS URI to the audio files from the previous steps (remember to arrange files in subdirectories with language codes), set the target GCS URI to store the transcripts, set the model to use to generate the transcripts and if using Chirp the region to be used.  
 Run all the cells.  
 When complete, json & txt transcripts should be available in the target GCS folder.  
 
@@ -65,6 +65,6 @@ A `wer_diagnosis` folder is created containing diagnosis HTML files to highligth
 
 ## (Optional)  Generate Google Cloud SRT transcripts ##
 Run the notebook `Transcript_generation/generate_gcp_srt_transcripts.ipynb`.  
-Set in the 1st cell the project ID, the GCS URI to the audio files and the GCS URI from the previous steps, the target GCS URI for the transcripts and the maximum number of characters to include into a given SRT chunk.  
+Set in the 1st cell the project ID, the GCS URI to the audio files and the GCS URI from the previous steps, the target GCS URI for the transcripts, if using Chirp the region to be used and the maximum number of characters to include into a given SRT chunk.  
 Run all the cells.  
 When complete, the srt transcripts should be available in the target GCS folder.   
